@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="dashboard">
+    <h1>Welcome to Your Expense Tracker</h1>
+    <p id="welcomeMessage"></p>
+    <button onclick="logout()">Logout</button>
+    <br>
+    <br>
+    <!-- Here you can add your expense tracking features -->
+    <button onclick="manageExpense()">Manage Expense</button>
+  </div>
+
+  <script>
+    // Display welcome message
+    document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve the current user data from localStorage
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (currentUser) {
+    document.getElementById("welcomeMessage").innerText = `Welcome, ${currentUser.username}!`;
+  } else {
+    window.location.href = "index.html"; // Redirect to login if no user is logged in
+  }
+});
+
+    // Logout function
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('currentUser');
+      window.location.href = "index.html"; // Redirect to login page
+    }
+
+    //continue function
+    function manageExpense(){
+      window.location.href = "mindex.html"
+    }
+  </script>
+</body>
+</html>

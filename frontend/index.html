@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker - Login / Create Account</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>Expense Tracker</h1>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="javascript:void(0);" onclick="showCreateAccount()">Create one</a></p>
+    </div>
+
+    <!-- Create Account Form -->
+    <div id="createAccountForm" style="display:none;">
+      <h2>Create Account</h2>
+      <input type="text" id="createUsername" placeholder="Username" required>
+      <input type="password" id="createPassword" placeholder="Password" required>
+      <button onclick="createAccount()">Create Account</button>
+      <p>Already have an account? <a href="javascript:void(0);" onclick="showLogin()">Login</a></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
